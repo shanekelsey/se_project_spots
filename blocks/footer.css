@@ -1,6 +1,7 @@
-.footer {
+.footer__copyright {
+  opacity: 0.7;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 60px 0;
   background-color: #fcf5e5;
+  margin: 0;
 }

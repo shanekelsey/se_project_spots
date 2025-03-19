@@ -7,28 +7,45 @@
 }
 
 .card__content {
+  margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12px;
+}
+
+.card__title {
   font-weight: 500;
-  font-style: normal;
+  margin: 0;
 }
 
 .card__like-btn {
+  cursor: pointer;
   width: 23px;
   height: 20px;
   border: none;
   background-color: transparent;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
   background-image: url(../images/heart.svg);
 }
 
 @media screen and (max-width: 627px) {
+  .card__title {
+    max-width: 250px;
+    font-size: 16px;
+  }
   .card {
     margin: 0;
   }
 
   .card__image {
     height: 288px;
+  }
+
+  .card__like-btn {
+    width: 20px;
+    height: 18px;
   }
 }
