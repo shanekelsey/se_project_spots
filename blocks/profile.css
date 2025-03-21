@@ -59,6 +59,7 @@
 
 .profile__edit-btn:hover {
   opacity: 1;
+  color: #212121;
 }
 
 .profile__add-btn {
@@ -101,19 +102,11 @@
     max-width: 288px;
     font-size: 20px;
     margin: 0 0 6px;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
   }
 
   .profile__description {
     max-width: 288px;
     margin: 0 0 32px;
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
   }
 
   .profile__column {
