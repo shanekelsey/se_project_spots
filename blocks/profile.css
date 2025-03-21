@@ -57,6 +57,10 @@
   padding: 0;
 }
 
+.profile__edit-btn:hover {
+  opacity: 1;
+}
+
 .profile__add-btn {
   border: none;
   cursor: pointer;
@@ -71,6 +75,10 @@
   gap: 8px;
   justify-content: center;
   align-items: center;
+}
+
+.profile__add-btn:hover {
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 627px) {
@@ -93,7 +101,6 @@
     max-width: 288px;
     font-size: 20px;
     margin: 0 0 6px;
-    overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
