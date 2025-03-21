@@ -45,6 +45,7 @@
 }
 
 .profile__edit-btn {
+  color: #212121;
   cursor: pointer;
   opacity: 0.7;
   font-weight: 500;
@@ -59,7 +60,6 @@
 
 .profile__edit-btn:hover {
   opacity: 1;
-  color: #212121;
 }
 
 .profile__add-btn {
