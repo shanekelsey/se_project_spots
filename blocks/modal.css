@@ -49,10 +49,17 @@
   object-fit: conatin;
   display: block;
   border-radius: 8px;
+  position: relative;
 }
 
 .modal__caption {
+  background-color: black;
   color: #fff;
+  border-radius: 8px;
+  display: inline;
+  padding: 4px 8px;
+  position: absolute;
+  bottom: -50px;
 }
 
 .modal__close-btn {
