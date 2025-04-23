@@ -41,6 +41,7 @@
   background-position: center;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .card__delete-btn:hover {

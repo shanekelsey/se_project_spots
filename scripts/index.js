@@ -135,6 +135,7 @@ function handleAddCardSubmit(evt) {
   });
   cardsList.prepend(cardElement);
   closeModal(newPostModal);
+  newPostForm.reset();
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
