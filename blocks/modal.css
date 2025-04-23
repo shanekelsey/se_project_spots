@@ -181,6 +181,6 @@
   }
 
   .modal__image {
-    max-width: unset;
+    max-width: 288px;
   }
 }
