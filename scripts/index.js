@@ -40,6 +40,9 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
 
+const editProfileContainer = document.querySelector("#edit-profile-content");
+const newPostContainer = document.querySelector("#new-post-contents");
+
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
@@ -97,6 +100,30 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" || event.key === "Esc") {
+    closeModal(editProfileModal);
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" || event.key === "Esc") {
+    closeModal(newPostModal);
+  }
+});
+
+editProfileModal.addEventListener("click", function (event) {
+  if (!editProfileContainer.contains(event.target)) {
+    closeModal(editProfileModal);
+  }
+});
+
+newPostModal.addEventListener("click", function (event) {
+  if (!newPostContainer.contains(event.target)) {
+    closeModal(newPostModal);
+  }
+});
 
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
