@@ -21,6 +21,19 @@ const hideInputError = (formEl, inputEl, config) => {
   inputEl.classList.remove(config.inputErrorClass);
 };
 
+function resetValidation() {
+  const profileError = document.querySelector("#profile-name-input-error");
+  const descriptionError = document.querySelector(
+    "#profile-description-input-error"
+  );
+  const profileInput = document.querySelector("#profile-name-input");
+  const descriptionInput = document.querySelector("#profile-description-input");
+  profileError.textContent = "";
+  profileInput.classList.remove(settings.inputErrorClass);
+  descriptionError.textContent = "";
+  descriptionInput.classList.remove(settings.inputErrorClass);
+}
+
 const checkInputValidity = (formEl, inputEl, config) => {
   if (!inputEl.validity.valid) {
     showInputError(formEl, inputEl, inputEl.validationMessage, config);

@@ -121,6 +121,7 @@ modals.forEach((modal) => {
 });
 
 editProfileBtn.addEventListener("click", function () {
+  resetValidation();
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
   openModal(editProfileModal);
