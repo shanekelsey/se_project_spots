@@ -53,13 +53,15 @@
 }
 
 .modal__caption {
+  margin: 0;
   background-color: black;
   color: #fff;
   border-radius: 8px;
   display: inline;
   padding: 4px 8px;
   position: absolute;
-  bottom: -50px;
+  left: 0;
+  top: calc(100% + 10px);
   font-size: 20px;
 }
 
@@ -204,7 +206,6 @@
 
   .modal__image {
     max-width: 288px;
-    height: 288px;
   }
 
   .modal__caption {
