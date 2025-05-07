@@ -158,6 +158,7 @@ function handleAddCardSubmit(evt) {
   });
   cardsList.prepend(cardElement);
   closeModal(newPostModal);
+  disableButton(newPostSave, settings);
   newPostForm.reset();
 }
 
