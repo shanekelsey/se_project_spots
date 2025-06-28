@@ -76,6 +76,7 @@ const deleteCardBtn = document.querySelector(".card__delete-btn");
 const deleteModal = document.querySelector("#delete-modal");
 const deleteCloseBtn = document.querySelector("#delete-close-button");
 const deleteForm = document.querySelector("#delete-form");
+const cancelBtn = document.querySelector("#cancel-button");
 
 let selectedCard;
 let selectedCardId;
@@ -93,9 +94,11 @@ function getCardElement(data) {
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
 
-  cardLikeBtnEl.addEventListener("click", function () {
-    cardLikeBtnEl.classList.toggle("card__like-btn_active");
-  });
+  if (data.isLiked) {
+    cardLikeBtnEl.classList.add("card__like-btn_active");
+  }
+
+  cardLikeBtnEl.addEventListener("click", (evt) => handleLike(evt, data._id));
 
   function handleDeleteCard(cardElement, cardId) {
     selectedCard = cardElement;
@@ -191,6 +194,14 @@ previewModalCloseBtn.addEventListener("click", function () {
   closeModal(previewModal);
 });
 
+deleteCloseBtn.addEventListener("click", function () {
+  closeModal(deleteModal);
+});
+
+cancelBtn.addEventListener("click", () => {
+  closeModal(deleteModal);
+});
+
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   api
@@ -240,8 +251,8 @@ function handleAvatarSubmit(evt) {
     .editAvatarInfo(avatarModalInput.value)
     .then((data) => {
       console.log(data.avatar);
-      avatarImage.src = data.avatar; // Update the profile avatar
-      evt.target.reset(); // Reset the form only on success
+      avatarImage.src = data.avatar;
+      evt.target.reset();
       closeModal(avatarModal);
     })
     .catch(console.error)
@@ -265,6 +276,19 @@ function handleDeleteSubmit(evt) {
     .finally(() => {
       setButtonText(submitButton, false, "Delete", "Deleting...");
     });
+}
+
+function handleLike(evt, id) {
+  const likeButton = evt.target;
+  const isLiked = likeButton.classList.contains("card__like-btn_active");
+
+  api
+    .likeStatus(id, isLiked)
+    .then(() => {
+      // Only toggle the class if the API call was successful
+      likeButton.classList.toggle("card__like-btn_active");
+    })
+    .catch(console.error); // Log any errors
 }
 
 avatarModal.addEventListener("submit", handleAvatarSubmit);

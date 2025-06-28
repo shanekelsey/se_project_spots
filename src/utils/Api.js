@@ -12,7 +12,6 @@ class Api {
   }
 
   getAppInfo() {
-    //Call getUserInfo in the array
     return Promise.all([this.getInitialCards(), this.getUserInfo()]);
   }
 
