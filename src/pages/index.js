@@ -19,7 +19,6 @@ const api = new Api({
 api
   .getAppInfo()
   .then(([cards, userInfo]) => {
-    console.log(cards);
     cards.forEach(function (item) {
       const cardElement = getCardElement(item);
       cardsList.append(cardElement);
@@ -204,6 +203,8 @@ cancelBtn.addEventListener("click", () => {
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
+  const submitButton = evt.submitter;
+  setButtonText(submitButton, true, "Save", "Saving...");
   api
     .editUserInfo({
       name: editProfileNameInput.value,
@@ -213,9 +214,13 @@ function handleEditProfileSubmit(evt) {
       profileNameEl.textContent = data.name;
       profileDescriptionEl.textContent = data.about;
       evt.target.reset();
+      disableButton(submitButton, settings);
       closeModal(editProfileModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      setButtonText(submitButton, false, "Save", "Saving...");
+    });
 }
 
 function handleAddCardSubmit(evt) {
@@ -269,7 +274,6 @@ function handleDeleteSubmit(evt) {
     .deleteCard(selectedCardId)
     .then((data) => {
       selectedCard.remove();
-      evt.target.reset();
       closeModal(deleteModal);
     })
     .catch(console.error)

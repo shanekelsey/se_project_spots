@@ -110,6 +110,7 @@
 
 .profile__avatar-container:hover .profile__avatar-btn {
   visibility: visible;
+  cursor: pointer;
 }
 
 .profile__avatar-btn::after {
