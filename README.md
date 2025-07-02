@@ -10,6 +10,7 @@ photos with others.
 - HTML
 - CSS
 - Responsive Design
+-
 
 ## Deployment
 

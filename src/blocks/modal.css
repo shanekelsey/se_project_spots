@@ -167,6 +167,50 @@
   pointer-events: none;
 }
 
+#delete-title {
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+}
+
+#delete-button {
+  background-color: #ff6565;
+  color: #212121;
+  border: 1px solid #212121;
+  width: 156px;
+  height: 52px;
+  border-radius: 8px;
+  border: none;
+}
+
+#delete-button:hover {
+  background-color: #ff3333;
+  cursor: pointer;
+}
+
+#cancel-button {
+  color: #212121;
+  background-color: white;
+  border: 1px solid #212121;
+  width: 156px;
+  height: 52px;
+  border-radius: 8px;
+}
+
+#cancel-button:hover {
+  background-color: #212121;
+  color: white;
+  cursor: pointer;
+}
+
+#delete-form {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
 @media screen and (max-width: 627px) {
   .modal {
     padding: 0 10px;
@@ -210,5 +254,12 @@
 
   .modal__caption {
     font-size: 16px;
+  }
+
+  #delete-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 }
